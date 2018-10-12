@@ -6,3 +6,8 @@
 
 ## If any package is missed, please install those npm modules
   - [npm install << package >>] (npm install << react-redux >>)
+
+
+## Comments
+
+ -- No validations added to input fields
