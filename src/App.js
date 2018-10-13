@@ -44,13 +44,13 @@ class App extends Component {
       });
   }
 
-  componentWillReceiveProps(){
-    var propsData = this.props.store.getState();
-    var data = propsData.planetObj.data;
-    var newUrl = propsData.planetObj.bookmarkUrl;
+  componentWillReceiveProps(nextProps){
+    var propsData = nextProps.planetObj;
+    var data = propsData.data;
+    var newUrl = propsData.bookmarkUrl;
     window.history.pushState({}, null, newUrl);
 
-    if(propsData.planetObj.searchType && propsData.planetObj.searchQuery){
+    if(propsData.searchType && propsData.searchQuery){
       this.setState({
         pagingCount: -1
       })
@@ -117,7 +117,8 @@ class App extends Component {
 
 function mapStateToProps(state){
   return {
-    planets : state.planets
+    planets : state.planets,
+    planetObj : state.planetObj
   }
 }
 
